@@ -1,1 +1,5 @@
-alert("Welcome to JHLab");
+function test () {
+    alert("dsklfj");
+}
+
+test();

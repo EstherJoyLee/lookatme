@@ -1,3 +1,4 @@
-# Boxing + Exciting
+# Welcome to Esther's Web Page
 
-복싱 사이트 짱 짱 짱
+안녕하세요 미래의 자연어처리 연구자를 꿈꾸는 이주희입니다.
+이곳에는 연구자가 되기 위한 저의 노력들이 담겨있습니다.

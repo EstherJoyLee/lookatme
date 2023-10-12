@@ -1,5 +1,3 @@
-function test () {
-    alert("dsklfj");
-}
-
-test();
+window.onload = function(){
+    alert("sdlkfjgd")
+  }

@@ -1,3 +1,3 @@
 window.onload = function(){
-    console.log("Welcome to JHLab")
+    console.log("Welcome to JHLab");
   }

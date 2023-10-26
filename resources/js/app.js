@@ -1,3 +1,3 @@
 window.onload = function(){
-    console.log("Welcome to JHLab");
-  }
+  alert("It's being updated");
+}

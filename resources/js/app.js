@@ -4,6 +4,7 @@ window.onload = function(){
 
   const chickIcon = document.getElementById('chick-icon');
   const chickContainer = document.querySelector('.chick-container');
+  const contrastThreshold = 128; // 색상 대비를 조절하는 임계값
   
   document.addEventListener('mousemove', (e) => {
       const mouseX = e.clientX;
@@ -11,8 +12,8 @@ window.onload = function(){
   
       // Get the background color at the mouse position
       const color = getBackgroundColor(mouseX, mouseY);
-      
-      // Calculate the contrasting color for the icon
+  
+      // Calculate the contrast color
       const contrastingColor = getContrastingColor(color);
   
       // Adjust the position of the chick icon based on mouse coordinates
@@ -23,38 +24,38 @@ window.onload = function(){
   });
   
   function getBackgroundColor(x, y) {
-      const pixel = getPixelAtMousePosition(x, y);
-      const color = rgbToHex(pixel[0], pixel[1], pixel[2]);
-      return color;
+      // You can replace this with your own logic to get the background color
+      // For example, you can capture the color of the background element at (x, y)
+      // Here, we're just using a random color as an example
+      const randomColor = getRandomColor();
+      return randomColor;
   }
   
-  function getPixelAtMousePosition(x, y) {
-      const canvas = document.createElement('canvas');
-      const context = canvas.getContext('2d');
-      canvas.width = 1;
-      canvas.height = 1;
-  
-      context.getPixel = function (x, y) {
-          return this.getImageData(x, y, 1, 1).data;
-      };
-  
-      return context.getPixel(x, y);
+  function getRandomColor() {
+      const randomColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+      return randomColor;
   }
   
-  function rgbToHex(r, g, b) {
-      return '#' + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1).toUpperCase();
+  function getContrastingColor(bgColor) {
+      // Convert the background color to an RGB array
+      const bgRgb = hexToRgb(bgColor);
+  
+      // Calculate the brightness of the background color
+      const brightness = (bgRgb.r * 299 + bgRgb.g * 587 + bgRgb.b * 114) / 1000;
+  
+      // Choose white or black for contrasting color based on brightness
+      const contrastingColor = brightness > contrastThreshold ? 'black' : 'white';
+  
+      return contrastingColor;
   }
   
-  function getContrastingColor(hexColor) {
-      const r = parseInt(hexColor.slice(1, 3), 16);
-      const g = parseInt(hexColor.slice(3, 5), 16);
-      const b = parseInt(hexColor.slice(5, 7), 16);
-  
-      // Calculate the luminance of the background color
-      const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-  
-      // Choose white or black based on the luminance for contrast
-      return luminance > 0.5 ? '#000' : '#FFF';
+  function hexToRgb(hex) {
+      // Convert a hexadecimal color to RGB format
+      const bigint = parseInt(hex.slice(1), 16);
+      const r = (bigint >> 16) & 255;
+      const g = (bigint >> 8) & 255;
+      const b = bigint & 255;
+      return { r, g, b };
   }
-
+  
 }

@@ -1,2 +1,10 @@
 @charset "UTF-8";
 @import "init.css";
+
+.chick-container {
+    position: absolute;
+}
+
+#chick-icon {
+    transition: transform 0.1s, fill 0.1s;
+}

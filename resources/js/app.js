@@ -33,7 +33,8 @@ window.onload = function(){
 
     // Get the computed background color of the element
     const computedBackgroundColor = window.getComputedStyle(element).backgroundColor;
-
+    console.log("x: " + x + ", y: " + y)
+    console.log(computedBackgroundColor)
     return computedBackgroundColor;
 }
 

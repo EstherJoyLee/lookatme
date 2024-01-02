@@ -12,7 +12,7 @@ window.onload = function(){
   document.addEventListener('mousemove', (e) => {
       const mouseX = e.clientX; // 마우스의 X 좌표
       const mouseY = e.clientY; // 마우스의 Y 좌표
-
+      debugger;
       // 마우스 위치의 배경 색상을 가져옵니다.
       const color = getBackgroundColor(mouseX, mouseY);
 

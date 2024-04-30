@@ -1,0 +1,114 @@
+@import "./mixin";
+
+header {
+  width: 480px;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: linear-gradient(45deg, aqua, royalblue);
+
+  h1 {
+    font: bold 50px/1 "orbitron";
+    color: #fff;
+    letter-spacing: 1px;
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    transform: translateY(-200%);
+
+    &::before {
+      content: "UI/UX DEVELOPMENT";
+      font: 14px/1 "orbitron";
+      color: #fff;
+      letter-spacing: 2px;
+      position: absolute;
+      left: 0;
+      top: 140px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 140px;
+      height: 2px;
+      background: #fff;
+      margin-top: 20px;
+    }
+  }
+
+  ul {
+    position: absolute;
+    left: 60px;
+    bottom: 100px;
+
+    li {
+      float: left;
+      margin-left: 10px;
+
+      a {
+        font-size: 20px;
+        color: #fff;
+
+        span {
+          display: inline-block;
+          transform: scale(0.7); // inline요소에는 적용 안됨
+          transform-origin: left center;
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  header {
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    display: flex;
+    width: 100%;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+
+    h1 {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -120%);
+      font-size: 5vw;
+
+      &::before {
+        top: 64px;
+        font-size: 12px;
+      }
+    }
+
+    ul {
+      left: 50%;
+      bottom: 8%;
+      transform: translateX(-50%);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      li {
+        a {
+          i {
+          }
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  header {
+    width: 350px;
+
+    h1 {
+      left: 50%;
+      transform: translate(-50%, -200%);
+    }
+  }
+}

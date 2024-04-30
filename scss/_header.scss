@@ -1,114 +1,86 @@
-@import "./mixin";
-
 header {
-  width: 480px;
+  width: 450px;
   height: 100%;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  background: linear-gradient(45deg, aqua, royalblue);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
+  z-index: 4;
 
   h1 {
-    font: bold 50px/1 "orbitron";
-    color: #fff;
-    letter-spacing: 1px;
     position: absolute;
-    left: 20%;
     top: 50%;
-    transform: translateY(-200%);
-
-    &::before {
-      content: "UI/UX DEVELOPMENT";
-      font: 14px/1 "orbitron";
-      color: #fff;
-      letter-spacing: 2px;
-      position: absolute;
-      left: 0;
-      top: 140px;
-    }
+    left: 50px;
+    margin-top: -300px;
+    font: bold 40px/1 "orbitron";
+    color: #fff;
 
     &::after {
       content: "";
       display: block;
-      width: 140px;
-      height: 2px;
+      width: 160px;
+      height: 3p;
       background: #fff;
-      margin-top: 20px;
+      margin-top: 8px;
     }
   }
 
-  ul {
+  #navi {
+    width: 100%;
     position: absolute;
-    left: 60px;
-    bottom: 100px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-30%);
 
     li {
-      float: left;
-      margin-left: 10px;
+      width: 450px;
+      padding: 30px 50px;
+      position: relative;
+      overflow: hidden;
+      opacity: 0.4;
+      cursor: pointer;
+      transition: transform 1.4s, opacity 1.4s;
+      transform-origin: left center;
 
-      a {
-        font-size: 20px;
+      h2 {
+        font: bold 12px/1 "orbitron";
         color: #fff;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
 
-        span {
-          display: inline-block;
-          transform: scale(0.7); // inline요소에는 적용 안됨
-          transform-origin: left center;
+        &::after {
+          content: "";
+          display: block;
+          width: 20px;
+          height: 1px;
+          background: #fff;
+          margin-top: 7px;
+          margin-bottom: 3px;
+          transition: 1.4s;
         }
       }
-    }
-  }
-}
 
-@include mobile {
-  header {
-    left: 50%;
-    bottom: 10px;
-    transform: translateX(-50%);
-    display: flex;
-    width: 100%;
-    height: 200px;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-
-    h1 {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -120%);
-      font-size: 5vw;
-
-      &::before {
-        top: 64px;
-        font-size: 12px;
+      p {
+        font: 10px/1 "arial";
+        color: #fff;
+        letter-spacing: 1px;
+        opacity: 0.7;
       }
-    }
 
-    ul {
-      left: 50%;
-      bottom: 8%;
-      transform: translateX(-50%);
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      li {
-        a {
-          i {
-          }
+      &.on {
+        background: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.4),
+          rgba(0, 0, 0, 0)
+        );
+        transform: scale(1.3);
+        opacity: 1;
+
+        h2::after {
+          width: 150px;
         }
       }
-    }
-  }
-}
-
-@include tablet {
-  header {
-    width: 350px;
-
-    h1 {
-      left: 50%;
-      transform: translate(-50%, -200%);
     }
   }
 }

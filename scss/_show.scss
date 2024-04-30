@@ -1,0 +1,169 @@
+main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  article {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+
+    video {
+      width: 120%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.5);
+    }
+
+    .slogan {
+      position: absolute;
+      right: 8%;
+      top: 50%;
+      transform: translateY(-60%);
+      text-align: right;
+      padding: 50px;
+      perspective: 900px;
+      display: flex;
+      flex-flow: column;
+      align-items: flex-start;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 500px;
+        height: 500px;
+        border: 1px solid #fff;
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: 0;
+        transition: all 1.5s;
+      }
+
+      h2 {
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 20px;
+
+        .inner {
+          text-align: left;
+          font: normal 90px/1 "Abril Fatface", "Black Han Sans", sans-serif;
+          color: #fff;
+          position: relative;
+          transform: scaleY(1.05);
+          opacity: 0;
+          transition: opaicty 0.2s 0.5s;
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: #fff;
+          position: absolute;
+          top: 0;
+          right: -100%;
+          transition: right ease-in-out 1s;
+        }
+      }
+
+      .p1 {
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+        margin-right: 14px;
+
+        .inner {
+          font: 20px/1 "verdana";
+          color: #fff;
+          position: relative;
+          opacity: 0;
+          transition: opacity 0.2s 0.8s;
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: #fff;
+          position: absolute;
+          top: 0;
+          right: -100%;
+          transition: right ease-in-out 1s 0.3s;
+        }
+      }
+    }
+
+    &.on {
+      z-index: 3;
+
+      .slogan {
+        &::before {
+          opacity: 1;
+          transform: rotateY(220deg);
+        }
+
+        h2,
+        .p1 {
+          .inner {
+            opacity: 1;
+          }
+
+          &::after {
+            right: 100%;
+          }
+        }
+      }
+    }
+
+    &.lower {
+      z-index: 2;
+    }
+
+    // mask 클래스가 추가로 붙었을 때의 모션처리
+    &:nth-of-type(1).mask {
+      -webkit-mask: url(../src/mask1.png);
+      -webkit-mask-size: 2300% 100%;
+      animation: mask-play 1.4s steps(22) forwards;
+    }
+    &:nth-of-type(2).mask {
+      -webkit-mask: url(../src/mask2.png);
+      -webkit-mask-size: 3000% 100%;
+      animation: mask-play 1.4s steps(29) forwards;
+    }
+    &:nth-of-type(3).mask {
+      -webkit-mask: url(../src/mask3.png);
+      -webkit-mask-size: 7100% 100%;
+      animation: mask-play 1.4s steps(70) forwards;
+    }
+    &:nth-of-type(4).mask {
+      -webkit-mask: url(../src/mask4.png);
+      -webkit-mask-size: 7400% 100%;
+      animation: mask-play 1.4s steps(73) forwards;
+    }
+  }
+}
+
+@keyframes mask-play {
+  0% {
+    -webkit-mask-position: 0% 0%;
+  }
+  100% {
+    -webkit-mask-position: 100% 0%;
+  }
+}

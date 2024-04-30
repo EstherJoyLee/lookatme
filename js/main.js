@@ -1,30 +1,29 @@
-window.addEventListener("DOMContentLoaded", () => {
-  const grid = new Isotope("section", {
-    itemSelector: "article",
-    columnWidth: "article", // itemSelector 와 동일한 값을 지정하면 자동으로 넓이 값을 계산해줌
-    transitionDuration: "0.5s",
-  }); // first param: parent of target elem
+const wrap = document.querySelector("main");
+const btns = wrap.querySelectorAll("#navi li");
+const panels = wrap.querySelectorAll("section article");
 
-  const btns = document.querySelectorAll("main ul li");
-  btns.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      const isOn = e.currentTarget.classList.contains("on");
-      if (isOn) return;
-      activation(e);
-    });
-  });
+btns.forEach((btn, idx) => {
+  btn.addEventListener("click", (e) => {
+    for (let i = 0; i < btns.length; i++) {
+      btns[i].classList.remove("on");
 
-  function activation(e) {
-    for (let btn of btns) {
-      btn.classList.remove("on");
+      if (panels[i].classList.contains("on")) {
+        panels[i].classList.add("mask");
+      }
     }
-    e.currentTarget.classList.add("on");
-    const btn_a = e.currentTarget.querySelector("a");
-    const a_href = btn_a.getAttribute("href");
 
-    grid.arrange({
-      filter: a_href,
-    });
-  }
+    btns[idx].classList.add("on");
+    panels[idx].classList.add("lower");
+
+    setTimeout(() => {
+      for (let i = 0; i < panels.length; i++) {
+        if (panels[i].classList.contains("on")) {
+          panels[i].classList.remove("on");
+          panels[i].classList.remove("mask");
+        }
+      }
+      panels[idx].classList.remove("lower");
+      panels[idx].classList.add("on");
+    }, 1400);
+  });
 });

@@ -1,11 +1,14 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
   list-style: none;
+  box-sizing: border-box;
 }
 
-body {
-  background: #efefef;
+body,
+html {
+  width: 100%;
+  min-width: 1028px;
+  height: 100%;
+  overflow-y: hidden;
 }

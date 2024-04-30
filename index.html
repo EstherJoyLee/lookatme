@@ -3,11 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>반응형 레이아웃 갤러리</title>
+    <title>DECODE LAB</title>
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap"
+      rel="stylesheet"
     />
     <script
       src="https://kit.fontawesome.com/6e561f56c7.js"
@@ -17,6 +23,108 @@
     <script defer src="js/main.js"></script>
   </head>
   <body>
-    <h1>Hello</h1>
+    <main>
+      <header>
+        <h1>DECODE <br />LABS</h1>
+
+        <ul id="navi">
+          <li class="on">
+            <h2>01 더샵 군산 프리미엘</h2>
+            <p>군산의 미래를 이끌어갈 단 하나의 이름.</p>
+          </li>
+          <li>
+            <h2>02 송도 Luxe SK VIEW</h2>
+            <p>가장 완벽한 송도의 시간을 살다.</p>
+          </li>
+          <li>
+            <h2>03 아야진 라메르 데시앙</h2>
+            <p>아야진 당신의 바다가 되다.</p>
+          </li>
+          <li>
+            <h2>04 AUTO SIZING GALLERY</h2>
+            <p>Gallery that auto layout and size.</p>
+          </li>
+        </ul>
+      </header>
+      <section>
+        <article class="on">
+          <a href="https://xn--6e0bs5ii3fhrcs2i1lat6zyt5a.kr/" target="_blank"
+            ><video
+              src="src/01_TheSharp.mp4"
+              loop="loop"
+              muted="muted"
+              autoplay="autoplay"
+            ></video
+          ></a>
+          <div class="slogan">
+            <h2>
+              <div class="inner">The Sharp <br />군산 프리미엘</div>
+            </h2>
+            <div class="p1">
+              <div class="inner">군산의 미래를 이끌어갈 단 하나의 이름.</div>
+            </div>
+          </div>
+        </article>
+        <article>
+          <a href="https://sdsk.co.kr/main/index.php" target="_blank"
+            ><video
+              src="src/02_Luxe.mp4"
+              loop="loop"
+              muted="muted"
+              autoplay="autoplay"
+            ></video
+          ></a>
+          <div class="slogan">
+            <h2>
+              <div class="inner">
+                송도 Luxe <br />Ocean<br />
+                SK VIEW
+              </div>
+            </h2>
+            <div class="p1">
+              <div class="inner">가장 완벽한 송도의 시간을 살다.</div>
+            </div>
+          </div>
+        </article>
+        <article>
+          <a
+            href="https://xn--2n1bt0fhybuzac62aqsdme8ki66a.com/main.php"
+            target="_blank"
+            ><video
+              src="src/03_Desian.mp4"
+              loop="loop"
+              muted="muted"
+              autoplay="autoplay"
+            ></video
+          ></a>
+          <div class="slogan">
+            <h2>
+              <div class="inner">아야진 라메르 <br />데시앙</div>
+            </h2>
+            <div class="p1">
+              <div class="inner">아야진 당신의 바다가 되다.</div>
+            </div>
+          </div>
+        </article>
+        <article>
+          <a href="pages/auto_gallery.html" target="_blank"
+            ><video
+              src="src/04_AutoGallery.mp4"
+              loop="loop"
+              muted="muted"
+              autoplay="autoplay"
+            ></video
+          ></a>
+          <div class="slogan">
+            <h2>
+              <div class="inner">Auto Sizing <br />Gallery</div>
+            </h2>
+            <div class="p1">
+              <div class="inner">Gallery that auto layout and size.</div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
   </body>
 </html>

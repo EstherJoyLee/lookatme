@@ -1,4 +1,5 @@
 window.addEventListener("DOMContentLoaded", () => {
+  alert("aaa");
   const grid = new Isotope("section", {
     itemSelector: "article",
     columnWidth: "article", // itemSelector 와 동일한 값을 지정하면 자동으로 넓이 값을 계산해줌

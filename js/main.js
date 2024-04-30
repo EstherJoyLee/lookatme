@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  const activation = function (e) {
+  function activation(e) {
     for (let btn of btns) {
       btn.classList.remove("on");
     }
@@ -27,5 +27,5 @@ window.addEventListener("DOMContentLoaded", () => {
     grid.arrange({
       filter: a_href,
     });
-  };
+  }
 });

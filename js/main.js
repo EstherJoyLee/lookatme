@@ -8,10 +8,9 @@ window.addEventListener("DOMContentLoaded", () => {
   const btns = document.querySelectorAll("main ul li");
   btns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      alert("test");
       e.preventDefault();
       const isOn = e.currentTarget.classList.contains("on");
-      if (!isOn) return;
+      if (isOn) return;
       activation(e);
     });
   });

@@ -1,5 +1,4 @@
 window.addEventListener("DOMContentLoaded", () => {
-  alert("aaa");
   const grid = new Isotope("section", {
     itemSelector: "article",
     columnWidth: "article", // itemSelector 와 동일한 값을 지정하면 자동으로 넓이 값을 계산해줌
@@ -9,6 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const btns = document.querySelectorAll("main ul li");
   btns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
+      alert("test");
       e.preventDefault();
       const isOn = e.currentTarget.classList.contains("on");
       if (!isOn) return;

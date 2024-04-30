@@ -1,0 +1,115 @@
+@charset "UTF-8";
+@import "init";
+
+/*
+    Let's take a look about Nesting function of SCSS
+    SCSS의 중첩 기능에 대해 알아봅시다!
+*/
+
+body {
+    background-color: #eee;
+}
+
+.wrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 100px;
+    border: 2px solid #bbb;
+
+    .item {
+            display: block;
+            width: 300px;
+            margin: 50px;
+            padding: 20px;
+            background: #FFF;
+            border-radius: 10px;
+            box-shadow: 5px 5px 20px rgba(0,0,0,0.1);
+
+            h2 {
+                    font-size: 30px;
+                    font-family: "arial";
+                    color: #333;
+                    margin-bottom: 15px;
+            }
+
+            p {
+                    font-size: 14px;
+                    line-height: 1.3;
+                    font-family: "arial";
+                    color: #777;
+                    margin-bottom: 20px;
+            }
+
+            a {
+                    width: 100px;
+                    height: 34px;
+                    border-radius: 20px;
+                    background: gray;
+                    font-size: 12px;
+                    color: #fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;;
+            }
+
+            // hover시 모션처리
+            &:hover {
+                background: aqua;
+                transition: 0.2s;
+                
+                * {
+                    transition: 1s;
+                }
+
+                h2 {
+                    color: #FFF;
+                }
+
+                p {
+                    color: #FFF;
+                }
+
+                a {
+                    background: yellow
+                }
+            }
+        }
+}
+
+// .wrap .item {
+//     display: block;
+//     width: 300px;
+//     margin: 50px;
+//     padding: 20px;
+//     background: #FFF;
+//     border-radius: 10px;
+//     box-shadow: 5px 5px 20px rgba(0,0,0,0.1);
+// }
+
+// .wrap .item h2 {
+//     font-size: 30px;
+//     font-family: "arial";
+//     color: #333;
+//     margin-bottom: 15px;
+// }
+
+// .wrap .item p {
+//     font-size: 14px;
+//     line-height: 1.3;
+//     font-family: "arial";
+//     color: #777;
+//     margin-bottom: 20px;
+// }
+
+// .wrap .item a {
+//     width: 100px;
+//     height: 34px;
+//     border-radius: 20px;
+//     background: gray;
+//     font-size: 12px;
+//     color: #fff;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;;
+// }

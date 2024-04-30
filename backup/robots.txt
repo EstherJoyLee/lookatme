@@ -1,0 +1,3 @@
+User-agent: *
+Allow:/
+Sitemap:https://look-at-me-ovo.netlify.app/sitemap.xml
